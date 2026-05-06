@@ -93,17 +93,25 @@ UD Annotatrix can be used in several different ways.  Some methods don't require
 
 Many of these methods require the `node` and `npm` executables.  To check if you have these, run `node -v`.  If you don't, you can find installation instructions [here](https://www.npmjs.com/get-npm).
 
+> **IMPORTANT NOTE**: There are a number of open issues with the [original UD-Annotatrix](https://github.com/jonorthwash/ud-annotatrix/issues). W
+
+
 | feature | local dynamic server | remote dynamic server | local static file | locally served static files | remotely served static files |
 | ----------------------------- | --- | -- | -- | -- | -- |
 | create and edit trees         | ✔   |  ✔ |  ✔ |  ✔ |  ✔ |
 | edit GitHub-hosted treebanks  |     |    |    |    |    |
 | collaborative editing         | (✔) |  ✔ |  ✖ |  ✖ |  ✖ |
 | chat                          | (✔) |  ✔ |  ✖ |  ✖ |  ✖ |
-| *HOW TO RUN*         | `npm server` |    | open in browser | `python -m SimpleHTTPServer` | github.io |
+| *HOW TO RUN*         | `npm run server` |    | open in browser | `python -m http.server` | github.io |
+| operational?         | **✖** | (✔)     | ✔            | ✔ | ✔ |
 
+The [github.io installation](https://jonorthwash.github.io/ud-annotatrix/src/server/public/html/annotatrix.html#1) is recommended for a first trial (no configuration needed). For running a local instance without collaboration features, the recommended setting is to work with locally served static files. The officially recommended configuration is currently not operational.
 
+### serving static files [**RECOMMENDED**]
 
-### serve dynamic files
+Serve up a copy of the UD Annotatrix static site.  This version does __not__ have a server backend, so [some features](#features) will be unavailable.  Uploaded databases will be saved into `localStorage`.  To start the server, `cd` to the project directory root and run `python -m http.server`.  The files should be available at `localhost:8000`.
+
+### serve dynamic files [**NOT WORKING AS OF 2026-05-06**]
 
 Run a copy of UD Annotatrix with server backend on your machine.  Uploaded databases will be saved directly to your hard drive.  This is the recommended method.  To install, run
 ```bash
@@ -115,7 +123,7 @@ You can configure the environment in several ways by setting `KEY=VALUE` pairs i
 
 To run the server, run `npm run dev-server` in the project directory root, then navigate your browser to `localhost:5316`.  If you would like to deploy your own copy of UD Annotatrix, you could alternately run `npm run server`.
 
-### remote (dynamic) server
+### remote (dynamic) server 
 
 Access a copy of UD Annotatrix with server backend running on another machine.  Uploaded databases will be saved on the remote server.  Some currently active remote servers:
  - [Kevin's website](`http://annotator.murp.us/`)
@@ -123,12 +131,6 @@ Access a copy of UD Annotatrix with server backend running on another machine.  
 ### as a static file
 
 Run a copy of UD Annotatrix without the server backend from a static file.  This version does __not__ have a server backend, so [some features](#features) will be unavailable.  Uploaded databases will be saved into `localStorage`.  Navigate your browser to `file:///path/to/ud-annotatrix/index.html`.
-
-### serving static files
-
-Serve up a copy of the UD Annotatrix static site.  This version does __not__ have a server backend, so [some features](#features) will be unavailable.  Uploaded databases will be saved into `localStorage`.  To start the server, `cd` to the project directory root and run `python -m http.server`.  The files should be available at `localhost:8000`.
-
-If you want to host the static files, you can do so by
 
 ### remote (static) files
 
