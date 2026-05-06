@@ -93,8 +93,7 @@ UD Annotatrix can be used in several different ways.  Some methods don't require
 
 Many of these methods require the `node` and `npm` executables.  To check if you have these, run `node -v`.  If you don't, you can find installation instructions [here](https://www.npmjs.com/get-npm).
 
-> **IMPORTANT NOTE**: There are a number of open issues with the [original UD-Annotatrix](https://github.com/jonorthwash/ud-annotatrix/issues). W
-
+> **IMPORTANT NOTE**: There are a number of open issues with the [original UD-Annotatrix](https://github.com/jonorthwash/ud-annotatrix/issues). As of 2026-05-06, the formerly recommended setting is no longer operational. Instead, we recommend working with locally served static files.
 
 | feature | local dynamic server | remote dynamic server | local static file | locally served static files | remotely served static files |
 | ----------------------------- | --- | -- | -- | -- | -- |
